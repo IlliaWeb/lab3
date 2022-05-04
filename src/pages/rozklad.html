@@ -3,22 +3,24 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Расписание</title>
+    <script defer src="main.bundle.js"></script>
 </head>
 <body>
     <header>
         
-        <nav>
-            <ul>
+        <div class="menylinks">
+            <ul class="listoflinks">
                 <li><a href="index.html">My blog</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="photo.html">Photo</a></li>
-                <li><a href="rozklad.html">Rozklad</a></li>
+                <li><a href="news.html">news </a></li>
+                <li><a href="photo.html">photo </a></li>
+                <li><a href="rozklad.html">rozklad </a></li>
             </ul>
-        </nav>
+        </div>
     </header>
     <section>
-        <h2>Мое расписание</h2>
-        <table border="true">
+        <h2 class="blogtitle">Мое расписание</h2>
+        <div class="tables">
+        <table  width="250" border="2" align="center"  border="true">
             <caption>Расписание</caption>
             <thead>
                 <tr>
@@ -113,8 +115,9 @@
                 </tr>
             </tbody>
         </table>
-        <h2>Викладачі:</h2>
-        <ol>
+    </div>
+        <h2 class="blogtitle">Викладачі:</h2>
+        <ol class="simplelist">
             <li>Столярова Анастасія Валеріївна</li>
             <li>Панасенко Євгеній Валерійович</li>
             <li>Кривохата Анастасія Григорівна</li>
@@ -129,7 +132,8 @@
         </ol>
     </section>
     <footer>
-        <p>Copyright 2014 <a href = "https://moodle.znu.edu.ua/user/profile.php">Contact me!</a></p>
+        <p class="blogtitle">Copyright 2022 <a href = "https://moodle.znu.edu.ua/user/profile.php">Contact me!</a></p>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -5,26 +5,29 @@
     <title>Мой сайт</title>
 <script defer src="main.bundle.js"></script></head>
 <body>
+    
     <header>
-        <h1>Личная страница (блог) Тюшнякова Ильи Сергеевича</h1>
-        <nav>
-            <ul>
+        <h1 class="blogtitle">Личная страница (блог) Тюшнякова Ильи Сергеевича</h1>
+        <div class="menylinks">
+            <ul class="listoflinks">
                 <li><a href="news.html">news </a></li>
                 <li><a href="photo.html">photo </a></li>
                 <li><a href="rozklad.html">rozklad </a></li>
             </ul>
-        </nav>
+        </div>
     </header>
     <section>
         <article>
             <header>
-                <h2>Моя биография</h2>
-                <p>Опубликовано
-                    <time datetime="2022-05-02T16:31:24+03:00">02.05.2022</time>
+                <h2 class="myheader">Моя биография</h2>
+                <p class="simpletext">Опубликовано
+                    <time class="simpletext" datetime="2022-05-02T16:31:24+03:00">02.05.2022</time> 
                 </p>
             </header>
-                <img width="250px" height="250px" src="./assets/images/p.jpg " alt="pidpis">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo veniam, nobis <br>
+            <div class="pimg">
+                <img width="300" height="300" src="./assets/images/p.jpg " alt="pidpis">
+            </div>    
+                <p class="simpletext"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo veniam, nobis <br>
                     facilis neque dolorum sequi eos deserunt assumenda, quisquam debitis quia animi dolorbr <br>
                     cupiditate consectetur amet rerum dicta. Placeat officia quod quos, assumenda est repellendus <br>
                     voluptatum eaque unde fugiat iste at <br>
@@ -39,8 +42,8 @@
         
     </section>
     <aside>
-        <h3>Мои увлечения</h3>
-        <ul>
+        <h3 class="blogtitle">Мои увлечения</h3>
+        <ul class="simplelist">
             <li>Чтение</li>
             <li>Видеоигры</li>
             <li>Готовка</li>
@@ -49,7 +52,8 @@
         </ul>
     </aside>
     <footer>
-        <p>Copyright 2022 мой сайт</p>
+        <p class="simpletext">Copyright 2022 мой сайт</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

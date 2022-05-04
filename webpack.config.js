@@ -1,26 +1,10 @@
 // webpack.config.js
-
 const path = require('path') 
 const HtmlWebpackPlugin = require('html-webpack-plugin') 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
-/*
-let htmlPageNames = [];
-const pages = fs.readdirSync('./src/pages')
-pages.forEach(page => {
-    if (page.endsWith('.html')) {
-        htmlPageNames.push(page.split('.html')[0])
-    }
-});
-let multipleHtmlPlugins = htmlPageNames.map(name => {
-    return new HtmlWebpackPlugin({
-      template: `./src/pages/${name}.html`, // relative path to the HTML files
-      filename: `${name}.html`, // output HTML files
-      chunks: [`${name}`] // respective JS files
-    })
-  });
-  .concat(multipleHtmlPlugins)
-  */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
     mode: 'development',
@@ -32,7 +16,41 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js', 
     },
-
+    module: {
+      rules: [
+        /*{
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            // Creates `style` nodes from JS strings
+            "style-loader",
+            // Translates CSS into CommonJS
+            "css-loader",
+            // Compiles Sass to CSS
+            "sass-loader",
+          ],
+        },*/
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        },
+  
+        {
+          test: /\.scss$/,
+          use: [
+              'style-loader',
+              'css-loader',
+              'sass-loader'
+          ]
+        }
+      ],
+    },
     devServer: {
         historyApiFallback: true,
         static: path.resolve(__dirname, './dist'),
@@ -41,7 +59,6 @@ module.exports = {
         hot: true,
         port: 8080,
     },
-
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -55,5 +72,6 @@ module.exports = {
               { from: "./src/assets/images", to: "./assets/images"},
             ],
           }),
+          new MiniCssExtractPlugin(),
         ]
 };
